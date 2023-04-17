@@ -5,3 +5,7 @@ async function showDataBase(client){
     console.log('dbs', dataList)
      dataList.databases.forEach(db=> console.log(` -${db.name}`))
 }
+
+module.exports = async function connectToMongoDB(){
+    const url =  'mongodb://127.0.0.1:27017/'
+    const client = new MongoClient(url);
