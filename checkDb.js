@@ -9,3 +9,8 @@ async function showDataBase(client){
 module.exports = async function connectToMongoDB(){
     const url =  'mongodb://127.0.0.1:27017/'
     const client = new MongoClient(url);
+
+    await client.connect()
+    await showDataBase(client)
+    await client.close()
+} 
